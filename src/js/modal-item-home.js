@@ -8,6 +8,7 @@ import {
   getUserFromLS,
   isUserSet,
   updateUserDatabase,
+  user,
 } from './auth-modal';
 import { loadLS, saveLS } from './storage';
 
@@ -15,11 +16,12 @@ const modal = document.querySelector('.backdrop');
 
 const shopUserBooks = JSON.parse(localStorage.getItem('user-shop-list')) || [];
 
-const user = getUserFromLS();
+// const user = getUserFromLS();
 
 function checkAutorization() {
   if (isUserSet()) {
-    const user = getUserFromLS();
+    user = getUserFromLS();
+    console.log(user);
   }
 }
 
