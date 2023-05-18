@@ -132,7 +132,7 @@ function createModalMarcup({
       </div>`;
 }
 
-function createButtonMarcup({ booksArr } = user, id) {
+function createButtonMarcup(id) {
   if (!isUserSet()) {
     return `<p class="modal__congratulation">
     Sign in to add the book to your shopping list.
