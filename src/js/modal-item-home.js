@@ -14,13 +14,13 @@ const modal = document.querySelector('.backdrop');
 
 const shopUserBooks = JSON.parse(localStorage.getItem('user-shop-list')) || [];
 
-const user = getUserFromLS();
+let user = getUserFromLS();
 
-function checkAutorization() {
-  if (isUserSet()) {
-    user = getUserFromLS();
-  }
-}
+// function checkAutorization() {
+//   if (isUserSet()) {
+//     user = getUserFromLS();
+//   }
+// }
 
 let userBooks;
 if (loadLS('books')) {
@@ -49,7 +49,6 @@ function modalOpen(id) {
       modalBody.insertAdjacentHTML('afterend', btnMarcup);
     }
     btnContainer = document.querySelector('.js-btn-container');
-    checkAutorization();
     btnContainer.innerHTML = createButtonMarcup(id);
     openModalWindow();
 
