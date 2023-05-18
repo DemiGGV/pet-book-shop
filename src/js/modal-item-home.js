@@ -3,12 +3,10 @@ export { modalOpen };
 import { getBooksId } from './api-books';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import {
-  // user,
   setUserInLS,
   getUserFromLS,
   isUserSet,
   updateUserDatabase,
-  user,
 } from './auth-modal';
 import { loadLS, saveLS } from './storage';
 
