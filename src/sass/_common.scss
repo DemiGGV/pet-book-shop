@@ -1,0 +1,87 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
+// COLORS
+$light-clr-1: #ffffff;
+$light-clr-2: #eac645;
+$dark-clr-1: #111111;
+$dark-clr-2: #202024;
+
+$add-text-clr: #b4afaf;
+$accent-clr: #4f2ee8;
+$bck-clr-home: #d0d0d0;
+$category-clr: rgba(17, 17, 17, 0.6);
+
+// ANIMATION
+$animation-fast: 400ms ease;
+$animation-slow: 800ms ease;
+$animation-add: 250ms cubic-bezier(0.47, 0, 0.745, 0.715);
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// SMOOTH SCROLL
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: DM Sans, sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+// mobile screen
+
+@media screen and (max-width: 375px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+  }
+}
+
+// tablet screen
+@media screen and (max-width: 768.98px) {
+  .container {
+    padding-right: 32px;
+    padding-left: 32px;
+    width: 768px;
+  }
+}
+
+// desktop screen
+.container {
+  padding-right: 24px;
+  padding-left: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+  .container {
+    width: auto;
+  }
+}

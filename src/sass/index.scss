@@ -1,0 +1,56 @@
+@import './common';
+
+@import './header';
+@import './tumbler-theme';
+
+@import './auth-modal';
+@import './categories';
+@import './support-ukraine';
+@import './gallery-categories';
+@import './modal-item-home';
+
+@import './footer';
+@import './shoplist-gallery-categories.scss';
+
+.align-home-sect {
+  display: flex;
+  margin-top: 40px;
+  margin-bottom: 72px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: 1440px) {
+    width: 1440px;
+  }
+
+  @media screen and (max-width: 1439px) {
+    flex-wrap: wrap;
+
+    .align-left {
+      display: flex;
+      justify-content: center;
+
+      margin-bottom: 100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @media screen and (max-width: 688px) {
+    .align-left {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .div-support {
+      margin-top: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .shop-list-none {
+    display: none;
+  }
+}
