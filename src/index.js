@@ -1,17 +1,17 @@
-import axios from 'axios';
-import Notiflix from 'notiflix';
+// import axios from 'axios';
+// import Notiflix from 'notiflix';
 
-import './js/header';
-import './js/tumbler-theme';
+import './js/header.js';
+import './js/tumbler-theme.js';
 
-import './js/auth-modal';
-import './js/categories';
-import './js/gallery-categories';
-import './js/modal-item-home';
-import './js/support-ukraine';
-import './js/api-books';
+import './js/auth-modal.js';
+import './js/api-books.js';
+import './js/support-ukraine.js';
+import './js/modal-item-home.js';
+import './js/categories.js';
+import './js/gallery-categories.js';
 
-import './js/modal_footer';
-import './js/footer';
-import './js/storage-methods';
-import './js/pagination';
+import './js/modal_footer.js';
+import './js/footer.js';
+import './js/storage-methods.js';
+import './js/pagination.js';
