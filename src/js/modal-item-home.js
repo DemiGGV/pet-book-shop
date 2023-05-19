@@ -1,11 +1,12 @@
-import { getBooksId } from './api-books.js';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import {
+  user,
   setUserInLS,
   getUserFromLS,
   isUserSet,
   updateUserDatabase,
 } from './auth-modal.js';
+import { getBooksId } from './api-books.js';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { loadLS, saveLS } from './storage.js';
 
 const modal = document.querySelector('.backdrop');

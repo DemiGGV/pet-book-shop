@@ -72,9 +72,9 @@ function isUserSet() {
   return !!loadLS(LOGINKEY);
 }
 
-if (isUserSet()) {
-  user = getUserFromLS();
-}
+// if (isUserSet()) {
+//   user = getUserFromLS();
+// }
 
 //-------------------------------------------------------------------
 
