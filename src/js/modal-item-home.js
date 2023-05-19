@@ -3,7 +3,6 @@ export { modalOpen };
 import { getBooksId } from './api-books.js';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import {
-  user,
   setUserInLS,
   getUserFromLS,
   isUserSet,
@@ -18,7 +17,7 @@ const shopUserBooks = JSON.parse(localStorage.getItem('user-shop-list')) || [];
 // let user = getUserFromLS();
 
 if (localStorage.getItem('user')) {
-  user = getUserFromLS(user);
+  currUser = getUserFromLS();
 }
 
 let userBooks;
@@ -177,9 +176,9 @@ function closeModalWindow() {
 }
 
 function onButtonAddClick() {
-  user.booksArr.push(idBook);
-  setUserInLS(user);
-  updateUserDatabase(user);
+  currUser.booksArr.push(idBook);
+  setUserInLS(currUser);
+  updateUserDatabase(currUser);
 
   userBooks.push(idBook);
   saveLS('books', userBooks);
@@ -192,11 +191,11 @@ function onButtonAddClick() {
 }
 
 function onButtonRemoveClick() {
-  user.booksArr.splice(user.booksArr.indexOf(idBook), 1);
-  setUserInLS(user);
-  updateUserDatabase(user);
+  currUser.booksArr.splice(currUser.booksArr.indexOf(idBook), 1);
+  setUserInLS(currUser);
+  updateUserDatabase(currUser);
 
-  userBooks.splice(user.booksArr.indexOf(idBook), 1);
+  userBooks.splice(currUser.booksArr.indexOf(idBook), 1);
   saveLS('books', userBooks);
 
   btnContainer.innerHTML = createAddMarcup();
