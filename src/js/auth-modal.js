@@ -1,5 +1,5 @@
-import { saveLS, loadLS, removeLS } from './storage';
-import { menusToggleOnAuth } from './header';
+import { saveLS, loadLS, removeLS } from './storage.js';
+import { menusToggleOnAuth } from './header.js';
 
 // Import needed function from Firebase Authentication SDK and RealTime Database
 import { initializeApp } from 'firebase/app';

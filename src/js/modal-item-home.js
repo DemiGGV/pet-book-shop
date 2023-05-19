@@ -1,6 +1,6 @@
 export { modalOpen };
 
-import { getBooksId } from './api-books';
+import { getBooksId } from './api-books.js';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import {
   user,
@@ -8,23 +8,18 @@ import {
   getUserFromLS,
   isUserSet,
   updateUserDatabase,
-} from './auth-modal';
-import { loadLS, saveLS } from './storage';
+} from './auth-modal.js';
+import { loadLS, saveLS } from './storage.js';
 
 const modal = document.querySelector('.backdrop');
 
 const shopUserBooks = JSON.parse(localStorage.getItem('user-shop-list')) || [];
 
 // let user = getUserFromLS();
+
 if (localStorage.getItem('user')) {
   user = getUserFromLS(user);
 }
-
-// function checkAutorization() {
-//   if (isUserSet()) {
-//     user = getUserFromLS();
-//   }
-// }
 
 let userBooks;
 if (loadLS('books')) {
