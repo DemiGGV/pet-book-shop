@@ -1,5 +1,3 @@
-export { modalOpen };
-
 import { getBooksId } from './api-books.js';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import {
@@ -100,37 +98,37 @@ function createModalMarcup({
   return `<div class="modal__body">
       <img src="${book_image}" alt="${title}" class="modal__img">
       <div class="modal__box">
-        <h2 class="modal__title">${title}</h2>
-        <h3 class="modal__subtitle">${author}</h3>
-        <p class="modal__text">${description}</p>
-        <ul class="modal__social-list">
+      <h2 class="modal__title">${title}</h2>
+      <h3 class="modal__subtitle">${author}</h3>
+      <p class="modal__text">${description}</p>
+      <ul class="modal__social-list">
           <li class="modal__social-amazon">
             <a class="modal__link-social-amazon" href="${amazonLink}" target="_blank"></a>
           </li>
           <li class="modal__social-open-book">
-            <a
-              class="modal__link-social-open-book"
-              href="${appleBooksLink}"
-              target="_blank"
-            ></a>
+          <a
+          class="modal__link-social-open-book"
+          href="${appleBooksLink}"
+          target="_blank"
+          ></a>
           </li>
           <li class="modal__social-book-shop">
-            <a
-              class="modal__link-social-book-shop"
-              href="${bookshopLink}"
-              target="_blank"
-            ></a>
+          <a
+          class="modal__link-social-book-shop"
+          href="${bookshopLink}"
+          target="_blank"
+          ></a>
           </li>
-        </ul>
-      </div>
-      </div>`;
+          </ul>
+          </div>
+          </div>`;
 }
 
 function createButtonMarcup(id) {
   if (!isUserSet()) {
     return `<p class="modal__congratulation">
-    Sign in to add the book to your shopping list.
-        </p>`;
+            Sign in to add the book to your shopping list.
+            </p>`;
   }
 
   if (userBooks.indexOf(id) === -1) {
@@ -138,8 +136,8 @@ function createButtonMarcup(id) {
   }
 
   return `<button class="modal__button-remove">
-  remove from the shopping list
-</button>`;
+          remove from the shopping list
+          </button>`;
 }
 
 function openModalWindow() {
@@ -206,21 +204,23 @@ function onButtonRemoveClick() {
 function createremoveMarcup() {
   return `<div class="button__wrapper-remove">
   <button class="modal__button-remove">
-    remove from the shopping list
+  remove from the shopping list
   </button>
-</div>
-<p class="modal__congratulation">
+  </div>
+  <p class="modal__congratulation">
   Сongratulations! You have added the book to the shopping list. To
   delete, press the button “Remove from the shopping list”.
-</p>`;
+  </p>`;
 }
 
 function createAddMarcup() {
   return `<div class="button__wrapper-remove">
   <button class="modal__button">add to shopping list</button>
-</div>
-<p class="modal__congratulation">
+  </div>
+  <p class="modal__congratulation">
   Сongratulations! You have removed the book from the shopping list. To
   add, press the button “Add to shopping list”.
-</p>`;
+  </p>`;
 }
+
+export { modalOpen };
