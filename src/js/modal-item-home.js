@@ -14,7 +14,7 @@ const modal = document.querySelector('.backdrop');
 
 const shopUserBooks = JSON.parse(localStorage.getItem('user-shop-list')) || [];
 
-// let user = getUserFromLS();
+let currUser;
 
 if (localStorage.getItem('user')) {
   currUser = getUserFromLS();
