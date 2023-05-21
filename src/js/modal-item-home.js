@@ -10,6 +10,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 const modal = document.querySelector('.backdrop');
 
 let currUser = localStorage.getItem('user') ? getUserFromLS() : [];
+console.log('✋😎👉 ~ currUser:', currUser);
 
 let idBook;
 let bookData;

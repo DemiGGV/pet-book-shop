@@ -208,6 +208,6 @@ function onTrashClick(e) {
   setUserInLS(currUser);
   updateUserDatabase(currUser);
 
-  bookCount = bookList.length;
+  // bookCount = bookList.length;
   renderShoppingList(userShoplist, currentPage);
 }
