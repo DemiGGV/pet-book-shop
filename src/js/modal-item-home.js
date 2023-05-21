@@ -1,5 +1,4 @@
 import {
-  user,
   setUserInLS,
   getUserFromLS,
   isUserSet,
@@ -7,22 +6,10 @@ import {
 } from './auth-modal.js';
 import { getBooksId } from './api-books.js';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { loadLS, saveLS } from './storage.js';
 
 const modal = document.querySelector('.backdrop');
 
-const shopUserBooks = JSON.parse(localStorage.getItem('user-shop-list')) || [];
-
-let currUser;
-console.log(user);
-if (localStorage.getItem('user')) {
-  currUser = getUserFromLS();
-}
-
-let userBooks;
-if (loadLS('books')) {
-  userBooks = loadLS('books');
-} else userBooks = [];
+let currUser = localStorage.getItem('user') ? getUserFromLS() : [];
 
 let idBook;
 let bookData;
@@ -31,7 +18,6 @@ let flag = true;
 
 function modalOpen(id) {
   getBooksId(id).then(data => {
-    //   Перевірка чи не пришли пусті дані //
     if (!data) {
       Notify.failure('Sorry, an error has occurred');
       return;
@@ -132,7 +118,7 @@ function createButtonMarcup(id) {
             </p>`;
   }
 
-  if (userBooks.indexOf(id) === -1) {
+  if (currUser.booksArr.indexOf(id) === -1) {
     return `<button class="modal__button">add to shopping list</button>`;
   }
 
@@ -176,13 +162,9 @@ function closeModalWindow() {
 
 function onButtonAddClick() {
   currUser.booksArr.push(idBook);
+  currUser.bookDataArr.push(bookData);
   setUserInLS(currUser);
   updateUserDatabase(currUser);
-
-  userBooks.push(idBook);
-  saveLS('books', userBooks);
-  shopUserBooks.push(bookData);
-  localStorage.setItem('user-shop-list', JSON.stringify(shopUserBooks));
 
   btnContainer.innerHTML = createremoveMarcup();
   const buttonRemove = document.querySelector('.modal__button-remove');
@@ -191,11 +173,9 @@ function onButtonAddClick() {
 
 function onButtonRemoveClick() {
   currUser.booksArr.splice(currUser.booksArr.indexOf(idBook), 1);
+  currUser.bookDataArr.splice(currUser.bookDataArr.indexOf(bookData), 1);
   setUserInLS(currUser);
   updateUserDatabase(currUser);
-
-  userBooks.splice(currUser.booksArr.indexOf(idBook), 1);
-  saveLS('books', userBooks);
 
   btnContainer.innerHTML = createAddMarcup();
   const btnAdd = document.querySelector('.modal__button');
