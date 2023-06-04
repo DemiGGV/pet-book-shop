@@ -89,9 +89,7 @@ if (!localStorage.getItem('user')) {
   setUserInLS(user);
 } else {
   const tempUser = getUserFromLS();
-  for (let key in tempUser) {
-    user[key] = tempUser[key];
-  }
+  user = structuredClone(tempUser);
 }
 menusToggleOnAuth();
 //==================================================================
