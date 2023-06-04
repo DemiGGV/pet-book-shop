@@ -6,7 +6,6 @@ import './js/tumbler-theme.js';
 
 import './js/auth-modal.js';
 import './js/api-books.js';
-import './js/storage-methods.js';
 import './js/support-ukraine.js';
 import './js/shoplist-gallery-categories.js';
 

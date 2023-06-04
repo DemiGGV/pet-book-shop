@@ -17,6 +17,7 @@ let btnContainer;
 let flag = true;
 
 function modalOpen(id) {
+  currUser = localStorage.getItem('user') ? getUserFromLS() : [];
   getBooksId(id).then(data => {
     if (!data) {
       Notify.failure('Sorry, an error has occurred');

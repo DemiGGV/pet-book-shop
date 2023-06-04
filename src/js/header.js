@@ -88,7 +88,7 @@ function menusToggleOnAuth() {
 if (!localStorage.getItem('user')) {
   setUserInLS(user);
 } else {
-  getUserFromLS();
+  user = getUserFromLS();
 }
 menusToggleOnAuth();
 //==================================================================

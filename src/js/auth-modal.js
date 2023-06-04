@@ -76,7 +76,7 @@ function isUserSet() {
 //-------------------------------------------------------------------
 
 // set vars after login
-function setUserVar(uid) {}
+// function setUserVar(uid) {}
 
 // sign up user
 async function createUser({ email } = user, password) {
