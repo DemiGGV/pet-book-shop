@@ -179,8 +179,8 @@ async function updateUserDatabase({ booksArr, userId }) {
 }
 
 // Get firebase realtime database data
-function getUserData({ userId }) {
-  get(child(dbRef, `users/${userId}`))
+async function getUserData({ userId }) {
+  await get(child(dbRef, `users/${userId}`))
     .then(snapshot => {
       if (!snapshot.exists()) {
         return;
