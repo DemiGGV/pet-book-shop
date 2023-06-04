@@ -88,7 +88,10 @@ function menusToggleOnAuth() {
 if (!localStorage.getItem('user')) {
   setUserInLS(user);
 } else {
-  user = getUserFromLS();
+  const tempUser = getUserFromLS();
+  for (let key in tempUser) {
+    user[key] = tempUser[key];
+  }
 }
 menusToggleOnAuth();
 //==================================================================
