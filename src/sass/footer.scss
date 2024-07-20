@@ -415,20 +415,24 @@ body.modal-open {
 }
 
 .footer {
-  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+  // width: 100%;
+
   background: $bck-clr-home;
   color: $dark-clr-1;
-  padding: 30px;
-  font-size: 16px;
+
   border: 1.5px solid $dark-clr-1;
   border-radius: 8px 8px 0px 0px;
+
+  font-size: 16px;
   line-height: 1.19;
+  text-align: center;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
 }
 
 .footer-title {
@@ -437,20 +441,20 @@ body.modal-open {
   padding-top: 8px;
 }
 
-@media screen and (max-width: 1440px) {
-  .footer {
-    width: 1440px;
-  }
-}
+// @media screen and (max-width: 1440px) {
+//   .footer {
+//     width: 1440px;
+//   }
+// }
 
-@media screen and (max-width: 768px) {
-  .footer {
-    width: 100%;
-  }
-}
+// @media screen and (max-width: 768px) {
+//   .footer {
+//     width: 100%;
+//   }
+// }
 
-@media screen and (max-width: 320px) {
-  .footer {
-    width: 100%;
-  }
-}
+// @media screen and (max-width: 320px) {
+//   .footer {
+//     width: 100%;
+//   }
+// }

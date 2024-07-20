@@ -75,9 +75,6 @@ function isUserSet() {
 
 //-------------------------------------------------------------------
 
-// set vars after login
-// function setUserVar(uid) {}
-
 // sign up user
 async function createUser({ email } = user, password) {
   await createUserWithEmailAndPassword(auth, email, password)
@@ -151,7 +148,6 @@ function signOutUser() {
       menusToggleOnAuth();
       removeLS(LOGINKEY);
       removeLS(LOCALKEY);
-      Notify.success(`Sign-out successful`, notifyOptions);
       return true;
     })
     .catch(error => {

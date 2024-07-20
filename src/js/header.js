@@ -38,7 +38,7 @@ toggleMenuBtnHeader.addEventListener('click', function () {
 });
 
 //список элементов меню, которые появляются при авторизации
-const toggleHeaderMenuAuth = document.querySelector('.page-nav'); // header menu
+const toggleHeaderMenuAuth = document.querySelector('.js-nav'); // header menu
 const togglemobileMenuAuth = document.querySelector('.js-mobile-menu-logedin'); // mobile menu items
 const toggleHeaderSignUp = document.querySelector('.js-header-signup'); // header signUp btn
 const togglemobileSignUp = document.querySelector('.js-mobile-signup'); // header signUp btn
@@ -55,7 +55,7 @@ signOutMobile.addEventListener('click', onClickSignOutUser);
 headerInfoBtn.addEventListener('click', onClickInfoButton);
 // переключение видимости по условиям
 function onClickInfoButton() {
-  headerInfoBtn.classList.toggle('is-visible');
+  // headerInfoBtn.classList.toggle('is-visible');
   headerInfoBtn.nextElementSibling.classList.toggle('is-visible');
 }
 function menusToggleOnAuth() {
@@ -170,21 +170,25 @@ function onSubmitAuthForm(event) {
   authForm.reset();
   backDropClosing();
 }
+
 //LogOut function
 function onClickSignOutUser() {
-  signOutUser(user);
   authForm.reset();
+  signOutUser(user);
 }
+
 //LogOUT from header desktop button
 function onClickHeaderSignOutUser() {
-  headerInfoBtn.classList.toggle('is-visible');
   headerInfoBtn.nextElementSibling.classList.toggle('is-visible');
+  headerInfoBtn.classList.toggle('is-visible');
+
   signOutUser(user);
   authForm.reset();
 
-  setTimeout(() => {
-    window.location.href = './index.html';
-  }, 500);
+  window.location.href = './index.html';
+  // setTimeout(() => {
+  //   window.location.href = './index.html';
+  // }, 500);
 }
 
 //==================================================================
@@ -192,6 +196,7 @@ function onClickHeaderSignOutUser() {
 // Закрытие по клику на бэкдропе, на "крестике", нажатию "ESC"
 // и отправке формы.
 //==================================================================
+
 const refs = {
   backDropAuth: document.querySelector('.js-overlay-modal'),
   authModalClose: document.querySelector('.js-modal-close'),
@@ -208,24 +213,29 @@ function onClickOpenAuthModal() {
   refs.backDropAuth.addEventListener('click', onBackDropClickClose);
   document.addEventListener('keydown', exitViaEsc);
 }
+
 function onCrossAuthClose() {
   backDropClosing();
 }
+
 function onBackDropClickClose(event) {
   if (event.target.classList.contains('js-overlay-modal')) {
     backDropClosing();
   }
 }
+
 function exitViaEsc(event) {
   if (event.key === 'Escape') {
     backDropClosing();
   }
 }
+
 function backDropClosing() {
   document.body.style.position = '';
   refs.backDropAuth.classList.toggle('is-hidden');
   refs.backDropAuth.removeEventListener('click', onBackDropClickClose);
   document.removeEventListener('keydown', exitViaEsc);
+
   // Reseting Authentication form to SignUp state
   buttonChooseForm.firstElementChild.classList.add('button-selected');
   buttonChooseForm.lastElementChild.classList.remove('button-selected');
