@@ -48,8 +48,8 @@ const headerInfoBtn = document.querySelector('.js-header-info'); // mobile signO
 
 const mobileName = document.querySelector('.js-mob-name'); // mobile user name
 const headerName = document.querySelector('.js-header-name'); // header user name
-const navItems = document.querySelector('.header-list');
-const mobNavItems = document.querySelector('.nav-list');
+const navItems = document.querySelector('.js-nav-list');
+const mobNavItems = document.querySelector('.js-mob-nav-list');
 signOutHeaderBtn.addEventListener('click', onClickHeaderSignOutUser);
 signOutMobile.addEventListener('click', onClickSignOutUser);
 headerInfoBtn.addEventListener('click', onClickInfoButton);

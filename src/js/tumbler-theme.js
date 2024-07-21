@@ -1,5 +1,5 @@
 
-const themeSwitch = document.querySelector('.theme-switch');
+const themeSwitch = document.querySelector('.js-switch');
 const body = document.querySelector('body');
 
 
