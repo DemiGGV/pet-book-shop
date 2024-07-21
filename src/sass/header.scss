@@ -46,6 +46,119 @@
       margin-left: auto;
   }
 
+  
+  &__btn-signUp{
+    display: none;
+
+    @media screen and (min-width: 768px){
+      margin-left: 24px;
+      padding: 13px;
+      min-width: 184px;
+      height: 48px;
+      
+      color: $light-clr-1;
+      background: $accent-clr;
+      
+      border: 1.5px solid $dark-clr-1;
+      border-radius: 18px;
+      
+      font-family: DMSans;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.28;
+      font-style: normal;
+      text-transform: none;
+      letter-spacing: -0.04em;
+      
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      
+      cursor: pointer;
+      
+      transition: all 0.3s;
+      
+      &:hover,
+      &:focus {
+        color: $dark-clr-1;
+        background: $light-clr-1;
+      }
+    }  
+  }
+
+  &__btn-user{
+    display: none;
+    @media screen and (min-width: 768px){
+      margin-left: 24px;
+      padding: 5px 7px;
+      min-width: 184px;
+      height: 48px;
+      
+      color: $light-clr-1;
+      background: $accent-clr;
+      
+      border: 1.5px solid $dark-clr-1;
+      border-radius: 18px;
+      
+      font-family: 'DM Sans';
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 1.31;
+      letter-spacing: -0.02em;
+      text-transform: none;
+      
+      display: flex;
+      align-items: center;
+      gap: 0;
+      
+      transition: all 0.3s;
+    }
+  }
+  
+  &__btn-logout{
+    display: none;
+    
+    @media screen and (min-width: 768px){
+        position: absolute;
+      
+        margin-left: 24px;
+        
+        padding: 14px 24px;
+        width: 184px;
+        height: 48px;
+      
+        color: $dark-clr-1;
+        background-color: $light-clr-1;
+      
+        border: 1.5px solid $accent-clr;
+        border-radius: 18px;
+      
+        cursor: pointer;
+      
+        font-family: DMSans;
+        font-size: 14px;
+        line-height: 1.28;
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+        
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        
+        transition: all 0.3s;
+      
+        &:hover,
+        &:focus {
+          color: $light-clr-1;
+          background: $accent-clr;
+        }
+    }
+  }
+
   @media screen and (min-width: 375px){
   }
 
@@ -155,68 +268,9 @@
   color: $accent-clr;
 }
 
-.btn-header {
-  margin-left: 24px;
-  padding: 13px;
-  min-width: 184px;
-  height: 48px;
-
-  color: $light-clr-1;
-  background: $accent-clr;
-  
-  border: 1.5px solid $dark-clr-1;
-  border-radius: 18px;
-  
-  font-family: DMSans;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.28;
-  font-style: normal;
-  text-transform: none;
-  letter-spacing: -0.04em;
-  
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-
-  cursor: pointer;
-
-  transition: all 0.3s;
-
-  &:hover,
-  &:focus {
-    color: $dark-clr-1;
-    background: $light-clr-1;
-  }
-}
 
 
-.btn-singin {
-  margin-left: 24px;
-  padding: 5px 7px;
-  min-width: 184px;
-  height: 48px;
 
-  color: $light-clr-1;
-  background: $accent-clr;
-
-  border: 1.5px solid $dark-clr-1;
-  border-radius: 18px;
-  
-  font-family: 'DM Sans';
-  font-weight: 700;
-  font-size: 22px;
-  line-height: 1.31;
-  letter-spacing: -0.02em;
-  text-transform: none;
-    
-  display: flex;
-  align-items: center;
-  gap: 0;
-  
-  transition: all 0.3s;
-}
 
 .header-singin-down-icon {
   fill: $light-clr-1;
@@ -233,43 +287,7 @@
   padding: 9px;
 }
 
-.btn-header-logout {
-  position: absolute;
 
-  margin-left: 24px;
-  padding: 14px 24px;
-  width: 184px;
-  height: 48px;
-
-  color: $dark-clr-1;
-  background-color: $light-clr-1;
-
-  border: 1.5px solid $accent-clr;
-  border-radius: 18px;
-
-  cursor: pointer;
-
-  font-family: DMSans;
-  font-size: 14px;
-  line-height: 1.28;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
-  
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  
-  transition: all 0.3s;
-
-  &:hover,
-  &:focus {
-    color: $light-clr-1;
-    background: $accent-clr;
-  }
-}
 
 
 .sign-up-icon {
@@ -291,9 +309,6 @@
 
 @media screen and (max-width: 768px) {
 
-  .btn-header {
-    display: none;
-  }
 
   .header-link {
     display: none;
@@ -302,26 +317,7 @@
   .active {
     display: none;
   }
-  .btn-singin {
-    display: none;
-  }
 
-  .btn-header-logout {
-    max-width: fit-content;
-    text-transform: none;
-    letter-spacing: -0.04em;
-    color: $dark-clr-1;
-    background: $light-clr-1;
-    border: 1.5px solid $dark-clr-1;
-    border-radius: 18px;
-    gap: 4px;
-    margin-left: 20px;
-    padding: 13px 17px;
-    font-size: 14px;
-    line-height: 1.28;
-    transition: all 0.3s;
-    display: none;
-  }
 }
 
 @media screen and (min-width: 319px) and (max-width: 769px) {
@@ -617,9 +613,9 @@
 }
 
 .js-mobile-menu-logedin.is-visible,
-.btn-header.is-visible,
-.btn-singin.is-visible,
-.btn-header-logout.is-visible,
+.header__btn-signUp.is-visible,
+.header__btn-user.is-visible,
+.header__btn-logout.is-visible,
 .btn-mob-signUp.is-visible,
 .header__navigation.is-visible,
 .mobile-menu-logedin.is-visible {
