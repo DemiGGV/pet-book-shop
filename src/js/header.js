@@ -20,14 +20,16 @@ const notifyOptions = {
 // Открытие закрытие мобильного меню
 const toggleMenuBtnHeader = document.querySelector('.js-open-menu');
 const mobileMenuContainerHeader = document.querySelector(
-  '.mobile-menu-container'
+  '.js-menu-container'
 );
+
 toggleMenuBtnHeader.addEventListener('click', function () {
   mobileMenuContainerHeader.classList.toggle('is-open');
   toggleMenuBtnHeader.firstElementChild.classList.toggle(
-    'burger-toggle-hidden'
+    'is-hidden'
   );
-  toggleMenuBtnHeader.lastElementChild.classList.toggle('burger-toggle-hidden');
+  toggleMenuBtnHeader.lastElementChild.classList.toggle('is-hidden');
+
   if (mobileMenuContainerHeader.classList.contains('is-open')) {
     document.body.style.overflow = 'hidden';
   } else {

@@ -29,13 +29,10 @@
         <svg class="header-menu-mob" width="28" heigth="28">
           <use class="mobile-menu" id="menu-icon" href="./images/svg-sprite/symbol-defs.svg#icon-burger"></use>
         </svg>
-        <svg class="header-menu-mob-close burger-toggle-hidden" width="28" height="28">
+        <svg class="header-menu-mob-close is-hidden" width="28" height="28">
           <use href="./images/svg-sprite/symbol-defs.svg#icon-x-close"></use>
         </svg>
       </button>
-
-
-
       <div class="js-sign-toggle-group">
         <button type="button" class="header__btn-signUp js-header-signup">
           Sign up
@@ -60,8 +57,8 @@
       </div>
     </div>
 
-    <div class="mmenu__backdrop mobile-menu-burger js-menu-container">
-      <div class="mmenu__menu modal is-hidden mobile-menu-container">
+    <div class="mmenu__backdrop js-menu-container">
+      <div class="mmenu__menu is-hidden">
 
         <button type="button" class="mmenu__button-sgnup btn-mob-signUp js-mobile-signup">
           Sign up
@@ -70,23 +67,22 @@
           </svg>
         </button>
 
-        <div class="mmenu__content js-mobile-menu-logedin is-visible">
-          
-          <div class="mmenu__userbar user-info-bar">
-            <svg class="mmenu__userbar__icon header-singin-icon" width="19" height="19">
+        <div class="mmenu__content js-mobile-menu-logedin is-visible">         
+          <div class="mmenu__userbar">
+            <svg class="mmenu__userbar__icon" width="37" height="37">
               <use href="./images/svg-sprite/symbol-defs.svg#icon-user"></use>
             </svg>
-            <p class="mmenu__userbar__text user-name js-mob-name">Stephen</p>
+            <p class="mmenu__userbar__text js-mob-name">Stephen</p>
           </div>
 
-          <nav class="mmenu__navigation nav nav-list-mob-menu">
-            <ul class="mmenu__list list js-mob-nav-list nav-list-mob-menu">
-              <li class="mmenu__item nav-active nav-item">
-                <a class="mmenu__link active-mob link nav-link" href="./index.html">Home</a>
+          <nav class="mmenu__navigation">
+            <ul class="mmenu__list js-mob-nav-list">
+              <li class="mmenu__item nav-active">
+                <a class="mmenu__link" href="./index.html">Home</a>
               </li>
-              <li class="mmenu__item nav-item">
-                <a class="mmenu__link link mobile-inactive-link nav-link" href="./shop-list.html">Shopping List
-                  <svg class="mmenu__link__icon header-link-icon-mob" width="20" height="20">
+              <li class="mmenu__item">
+                <a class="mmenu__link" href="./shop-list.html">Shopping&nbsp;List
+                  <svg class="mmenu__link__icon" width="20" height="20">
                     <use href="./images/svg-sprite/symbol-defs.svg#bag"></use>
                   </svg>
                 </a>
@@ -94,8 +90,8 @@
             </ul>
           </nav>
           
-          <button type="button" class="mmenu__btn-logout btn-header-mob-logout js-mobile-logout">
-            Log out<svg class="mmenu__logout-icon sign-up-icon" width="20" height="20">
+          <button type="button" class="mmenu__btn-logout js-mobile-logout">
+            Log out<svg class="mmenu__btn-logout-icon" width="20" height="20">
               <use href="./images/svg-sprite/symbol-defs.svg#arrow-right-icon"></use>
             </svg>
           </button>
