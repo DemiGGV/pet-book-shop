@@ -2,7 +2,6 @@
 import { onClickEscape, closeModal } from './modal_footer'
 import Glide from '@glidejs/glide';
 
-
 // render_footer_modal
 
 const refs = {
@@ -390,11 +389,7 @@ export function openModal(event) {
   </div>
 </div>`;
 
-    
   refs.footerModal.insertAdjacentHTML('beforeend', markup);
-
-  // const slide = document.querySelector('.glide__slides--footer');
-    
 
   const closeModalBtn = document.querySelector('[data-footer-close]');
 
@@ -405,18 +400,12 @@ export function openModal(event) {
   closeModalBtn.addEventListener('click', closeModal);
 }
 
-
 // запобігає мерехтіння модалки при перезавантаженні сторінки---
 
   document.addEventListener("DOMContentLoaded", function() {
   const modalFooter = document.getElementById("modalFooter");
   modalFooter.style.display = "flex";
   });
-
-
-
-// slider_glide
-
 
 const options = {
   type: 'carousel',
@@ -427,5 +416,3 @@ const options = {
 };
 
 const glideFooter = new Glide('.glide_footer', options);
-
-
