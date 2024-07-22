@@ -49,7 +49,7 @@ const signOutMobile = document.querySelector('.js-mobile-logout'); // mobile sig
 const headerInfoBtn = document.querySelector('.js-header-info'); // mobile signOut btn
 
 const mobileName = document.querySelector('.js-mob-name'); // mobile user name
-const headerName = document.querySelector('.js-header-name'); // header user name
+const headerName = document.querySelector('.js-btn-user-name'); // header user name
 const navItems = document.querySelector('.js-nav-list');
 const mobNavItems = document.querySelector('.js-mob-nav-list');
 signOutHeaderBtn.addEventListener('click', onClickHeaderSignOutUser);

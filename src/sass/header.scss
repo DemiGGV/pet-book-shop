@@ -23,21 +23,24 @@
     justify-content: center;
     align-items: center;
 
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 600;
-    color: $dark-clr-1;
+    
+    &-icon {
+      width: 30px;
+      height: 30px;
+      stroke-width: 0;
+    }
+    &-text{
+      margin-left: 8px;
+
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.05rem;
+
+      color: $dark-clr-1;
+    }
   }
 
-  &__logo-icon {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    stroke-width: 0;
-    color: $dark-clr-1;
-    fill: currentColor;
-    padding-right: 4px;
-  }
 
   &__buttons {
     display: flex;
@@ -46,12 +49,45 @@
     margin-left: auto;
   }
 
+  &__mob-menu-btn {
+    cursor: pointer;
+    margin-left: 14px;
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+    outline: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+    &-icon {
+      stroke: $dark-clr-1;
+      width: 28px;
+      height: 28px;
+      background-color: $light-clr-1;
+      &:hover,
+      &:focus {
+        stroke: $accent-clr;
+      }
+    }
+    &-icon.is-hidden {
+      pointer-events: none;
+      opacity: 0;
+      display: none;
+    }
+  }
+
   &__btn-signUp {
     display: none;
 
     @media screen and (min-width: 768px) {
       margin-left: 24px;
-      padding: 13px;
+      padding: 15px 14px;
       min-width: 184px;
       height: 48px;
 
@@ -61,7 +97,7 @@
       border: 1.5px solid $dark-clr-1;
       border-radius: 18px;
 
-      font-family: DMSans;
+      font-family: DM Sans;
       font-size: 14px;
       font-weight: 500;
       line-height: 1.28;
@@ -83,14 +119,23 @@
         color: $dark-clr-1;
         background: $light-clr-1;
       }
+      &-icon {
+        stroke: $light-clr-2;
+        position: relative;
+      }
     }
+  }
+  &__btn-signUp.is-visible {
+    pointer-events: none;
+    opacity: 0;
+    display: none;
   }
 
   &__btn-user {
     display: none;
     @media screen and (min-width: 768px) {
       margin-left: 24px;
-      padding: 5px 7px;
+      padding: 4px 12px;
       min-width: 184px;
       height: 48px;
 
@@ -112,7 +157,28 @@
       gap: 0;
 
       transition: all 0.3s;
+      &-icon {
+        width: 37px;
+        height: 37px;
+        fill: $accent-clr;
+        background: $light-clr-1;
+        border-radius: 50%;
+        padding: 9px;
+      }
+      &-name {
+        margin-left: 9px;
+        margin-right: auto;
+      }
+      &-down-icon {
+        fill: $light-clr-1;
+        margin-left: 4px;
+      }
     }
+  }
+  &__btn-user.is-visible {
+    pointer-events: none;
+    opacity: 0;
+    display: none;
   }
 
   &__btn-logout {
@@ -123,7 +189,7 @@
 
       margin-left: 24px;
 
-      padding: 14px 24px;
+      padding: 14px 15px;
       width: 184px;
       height: 48px;
 
@@ -133,13 +199,12 @@
       border: 1.5px solid $accent-clr;
       border-radius: 18px;
 
-      font-family: DMSans;
+      font-family: DM Sans;
       font-size: 14px;
       line-height: 1.28;
       font-style: normal;
       font-weight: 500;
       letter-spacing: -0.01em;
-      text-transform: uppercase;
 
       display: flex;
       align-items: center;
@@ -154,6 +219,11 @@
       color: $light-clr-1;
       background: $accent-clr;
     }
+  }
+  &__btn-logout.is-visible {
+    pointer-events: none;
+    opacity: 0;
+    display: none;
   }
 
   &__navigation {
@@ -170,10 +240,10 @@
     }
   }
   &__navigation.is-visible {
-  pointer-events: none;
-  opacity: 0;
-  display: none;
-}
+    pointer-events: none;
+    opacity: 0;
+    display: none;
+  }
 
   &__list {
     display: none;
@@ -226,15 +296,6 @@
       display: inline-block;
     }
   }
-
-  @media screen and (min-width: 375px) {
-  }
-
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
 }
 
 .mmenu {
@@ -254,13 +315,13 @@
 
     @media screen and (min-width: 768px) {
       display: none;
-    }  
-  }  
+    }
+  }
   &__backdrop.is-open {
     opacity: 1;
     visibility: visible;
     pointer-events: visible;
-  }  
+  }
 
   &__menu {
     height: 90vh;
@@ -280,7 +341,7 @@
     flex-direction: column;
   }
 
-  &__button-sgnup{
+  &__button-sgnup {
     width: 185px;
     height: 48px;
     margin-top: 40px;
@@ -298,7 +359,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-    
+
     font-family: DM Sans;
     font-size: 14px;
     font-style: normal;
@@ -315,44 +376,49 @@
       background: $light-clr-1;
     }
   }
-
-  &__content.is-visible{
+  &__button-sgnup.is-visible {
     pointer-events: none;
-  opacity: 0;
-  display: none;
+    opacity: 0;
+    display: none;
   }
 
-  &__userbar{
+  &__content.is-visible {
+    pointer-events: none;
+    opacity: 0;
+    display: none;
+  }
+
+  &__userbar {
+    height: 37px;
+    margin-top: 20px;
+    margin-left: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 9px;
+
+    &__icon {
+      width: 37px;
       height: 37px;
-      margin-top: 20px;
-      margin-left: 20px;
+      fill: $accent-clr;
+      background: $light-clr-1;
+      border-radius: 50%;
+      padding: 9px;
+    }
 
-      display: flex;
-      align-items: center;
-      justify-content: start;
-      gap: 9px;
-
-      &__icon{
-        width: 37px;
-        height: 37px;
-        fill: $accent-clr;
-        background: $light-clr-1;
-        border-radius: 50%;
-        padding: 9px;
-      }
-
-      &__text{
-        font-family: 'DM Sans';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 22px;
-        line-height: 1.31;
-        letter-spacing: -0.02rem;
-        color: $light-clr-1;      
-      }
+    &__text {
+      font-family: 'DM Sans';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 1.31;
+      letter-spacing: -0.02rem;
+      color: $light-clr-1;
+    }
   }
 
-  &__navigation{
+  &__navigation {
     margin-top: 125px;
   }
   &__navigation.is-visible {
@@ -361,7 +427,7 @@
     display: none;
   }
 
-  &__list{
+  &__list {
     margin: 0 auto;
     width: 120px;
 
@@ -371,24 +437,24 @@
     gap: 8px;
   }
 
-  &__item{
+  &__item {
     height: 35px;
 
     border-radius: 36px;
     color: $light-clr-1;
-    
+
     font-size: 14px;
     font-weight: 700;
     line-height: 18px;
     display: inline-flex;
   }
-  &__item.nav-active{
+  &__item.nav-active {
     padding: 8px 16px;
     color: $dark-clr-1;
     background-color: $light-clr-2;
   }
 
-  &__link{
+  &__link {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -398,10 +464,9 @@
     text-transform: uppercase;
     letter-spacing: -0.04rem;
 
-    &__icon{
+    &__icon {
       stroke-width: 0;
-      fill: $light-clr-1;
-      stroke: $dark-clr-1;
+      fill: currentColor;
       display: inline-block;
     }
   }
@@ -413,25 +478,24 @@
 
     color: $dark-clr-1;
     background: $light-clr-1;
-    
+
     border: 1.5px solid $dark-clr-1;
     border-radius: 18px;
-    
+
     font-size: 14px;
     font-weight: 500;
     line-height: 1.28;
     text-transform: none;
     letter-spacing: -0.04em;
-    
+
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 4px;
-    
+
     position: absolute;
     left: 20px;
     bottom: 20px;
-    
+
     transition: all 0.3s;
 
     &:hover,
@@ -440,119 +504,8 @@
       background: $accent-clr;
     }
 
-    &-icon{
+    &-icon {
       stroke: $light-clr-2;
     }
   }
-  
-}
-
-.header__btn-signUp.is-visible,
-.header__btn-user.is-visible,
-.header__btn-logout.is-visible,
-.btn-mob-signUp.is-visible,
-.header__navigation.is-visible,
-.mobile-menu-logedin.is-visible {
-  pointer-events: none;
-  opacity: 0;
-  display: none;
-}
-
-.menu-burger-open {
-  cursor: pointer;
-  background-color: $dark-clr-1;
-  border: none;
-  border-radius: 50%;
-  outline: none;
-  justify-content: center;
-  align-items: flex-end;
-  margin-left: 14px;
-  padding: 0;
-  transition: all 0.3s ease;
-  display: flex;
-}
-
-.header-menu-mob {
-  stroke: $dark-clr-1;
-  transition: all 0.3s;
-  width: 28px;
-  height: 28px;
-  background-color: $light-clr-1;
-  &:hover,
-  &:focus {
-    stroke: $accent-clr;
-  }
-}
-
-.menu-burger-open .header-menu-mob {
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-
-.menu-burger-open .header-menu-mob-close {
-  transition: opacity 0.3s ease;
-  background-color: $light-clr-1;
-}
-
-
-.header-singin-down-icon {
-  fill: $light-clr-1;
-  margin-left: 4px;
-}
-
-.sign-up-icon {
-  stroke: $light-clr-2;
-  position: relative;
-}
-
-.mobile-menu-close-button {
-  display: none;
-}
-
-.mobile-menu-close-button {
-  cursor: pointer;
-  background-color: $dark-clr-1;
-  border: none;
-  border-radius: 50%;
-  outline: none;
-  justify-content: center;
-  align-items: flex-end;
-  margin-left: auto;
-  padding: 0;
-  animation: all 0.3s;
-  display: flex;
-  width: 24px;
-  height: 24px;
-  align-items: center;
-  margin: 18px;
-}
-
-.header-menu-mob-close.is-hidden {
-  display: none;
-  transform: scale(0);
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-}
-
-.header-menu-mob.is-hidden {
-  display: none;
-  transition: opacity 0.3s ease-out, height 0.3s ease-out;
-}
-
-.header-menu-mob-close {
-  stroke: $dark-clr-1;
-  transition: all 0.3s;
-  display: flex;
-}
-
-.header-menu-mob-close:hover,
-.header-menu-mob-close:focus {
-  stroke: $accent-clr;
-}
-
-.mobile-menu-logedin {
-  pointer-events: all;
-  opacity: 1;
-  visibility: visible;
-  justify-content: flex-end;
-  align-items: flex-start;
 }

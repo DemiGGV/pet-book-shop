@@ -25,32 +25,33 @@
     <div class="header__buttons">
       <include src="./partials/tumbler-theme.html"></include>
 
-      <button type="button" class="menu-burger-open js-open-menu">
-        <svg class="header-menu-mob" width="28" heigth="28">
-          <use class="mobile-menu" id="menu-icon" href="./images/svg-sprite/symbol-defs.svg#icon-burger"></use>
+      <button type="button" class="header__mob-menu-btn js-open-menu">
+        <svg class="header__mob-menu-btn-icon" width="28" heigth="28">
+          <use href="./images/svg-sprite/symbol-defs.svg#icon-burger"></use>
         </svg>
-        <svg class="header-menu-mob-close is-hidden" width="28" height="28">
+        <svg class="header__mob-menu-btn-icon is-hidden" width="28" height="28">
           <use href="./images/svg-sprite/symbol-defs.svg#icon-x-close"></use>
         </svg>
       </button>
+
       <div class="js-sign-toggle-group">
         <button type="button" class="header__btn-signUp js-header-signup">
           Sign up
-          <svg class="sign-up-icon" width="20" height="20">
+          <svg class="header__btn-signUp-icon" width="20" height="20">
             <use href="./images/svg-sprite/symbol-defs.svg#arrow-right-icon"></use>
           </svg>
         </button>
         <button type="button" class="header__btn-user js-header-info is-visible">
-          <svg class="header-singin-icon" width="19" height="19">
+          <svg class="header__btn-user-icon" width="19" height="19">
             <use href="./images/svg-sprite/symbol-defs.svg#icon-user"></use>
           </svg>
-          <span class="js-header-name">Stephen</span>
-          <svg class="header-singin-down-icon" width="23" height="26">
+          <span class="header__btn-user-name js-btn-user-name">Imiarek</span>
+          <svg class="header__btn-user-down-icon" width="23" height="26">
             <use href="./images/svg-sprite/symbol-defs.svg#icon-arrow-down-icon"></use>
           </svg>
         </button>
-        <button type="button" class="header__btn-logout is-visible js-header-logout">
-          Log out<svg class="sign-up-icon" width="20" height="20">
+        <button type="button" class="header__btn-logout js-header-logout is-visible">Log out
+          <svg class="sign-up-icon" width="20" height="20">
             <use href="./images/svg-sprite/symbol-defs.svg#arrow-right-icon"></use>
           </svg>
         </button>
@@ -60,7 +61,7 @@
     <div class="mmenu__backdrop js-menu-container">
       <div class="mmenu__menu is-hidden">
 
-        <button type="button" class="mmenu__button-sgnup btn-mob-signUp js-mobile-signup">
+        <button type="button" class="mmenu__button-sgnup js-mobile-signup">
           Sign up
           <svg class="mmenu__sgnup-icon sign-up-icon" width="20" height="20">
             <use href="./images/svg-sprite/symbol-defs.svg#arrow-right-icon"></use>
