@@ -1,8 +1,26 @@
 .footer {
-  padding: 29px 0;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px 0;
   position: sticky;
-  box-shadow: 0 2px 8px #5f41af80, inset 0 1px #ffffff4d, inset 0 10px #fff3,
-    inset 0 10px 20px #ffffff40, inset 0 -15px 30px #7e35d34d;
+  // box-shadow: 0 2px 8px #5f41af80, inset 0 1px #ffffff4d, inset 0 10px #fff3,
+  //   inset 0 10px 20px #ffffff40, inset 0 -15px 30px #7e35d34d;
+  // width: 100%;
+
+  background: $bck-clr-home;
+  color: $dark-clr-1;
+
+  border: 1.5px solid $dark-clr-1;
+  border-radius: 8px 8px 0px 0px;
+
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer__wrapper {
@@ -99,12 +117,6 @@
 
 //---- притискання футера до низа екрану----
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
 .wrapper--body {
   display: flex;
   flex-direction: column;
@@ -115,9 +127,6 @@ body {
   flex: 1;
 }
 
-.footer {
-  margin-top: auto;
-}
 
 // modal-footer
 .backdrop.footer__backdrop {
@@ -414,26 +423,6 @@ body.modal-open {
   overflow: hidden;
 }
 
-.footer {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 30px;
-  // width: 100%;
-
-  background: $bck-clr-home;
-  color: $dark-clr-1;
-
-  border: 1.5px solid $dark-clr-1;
-  border-radius: 8px 8px 0px 0px;
-
-  font-size: 16px;
-  line-height: 1.19;
-  text-align: center;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .footer-title {
   display: flex;
