@@ -98,13 +98,15 @@ function renderLogos() {
   const markup = charityFunds
     .map(({ title, url, img, img2, width, height }, index) => {
       const paddedIndex = (index + 1).toString().padStart(2, '0');
-      return `<div class="logo-item fund-item"><p class="fund-number">${paddedIndex}</p>
-      <a href="${url}" class="logo-img"  target="_blank" crossorigin="anonymous"  rel="noopener noreferrer nofollow" aria-label="${title}" >
-      <picture>
-      <source srcset="${img}, ${img2} 2x" />
-      <img src="${img}" alt="${title}" loading="lazy" width="${width}" height="${height}">
-    </picture>
-      </a></div>`;
+      return `<div class="logo-item fund-item">
+        <p class="fund-number">${paddedIndex}</p>
+        <a href="${url}" class="logo-img"  target="_blank" crossorigin="anonymous"  rel="noopener noreferrer nofollow" aria-label="${title}" >
+          <picture>
+            <source srcset="${img}, ${img2} 2x" />
+            <img src="${img}" alt="${title}" loading="lazy" width="${width}" height="${height}">
+          </picture>
+        </a>
+      </div>`;
     })
     .join('');
   logoContainer.insertAdjacentHTML('beforeend', markup);
