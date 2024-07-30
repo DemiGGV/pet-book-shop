@@ -19,15 +19,11 @@ const notifyOptions = {
 
 // Открытие закрытие мобильного меню
 const toggleMenuBtnHeader = document.querySelector('.js-open-menu');
-const mobileMenuContainerHeader = document.querySelector(
-  '.js-menu-container'
-);
+const mobileMenuContainerHeader = document.querySelector('.js-menu-container');
 
 toggleMenuBtnHeader.addEventListener('click', function () {
   mobileMenuContainerHeader.classList.toggle('is-open');
-  toggleMenuBtnHeader.firstElementChild.classList.toggle(
-    'is-hidden'
-  );
+  toggleMenuBtnHeader.firstElementChild.classList.toggle('is-hidden');
   toggleMenuBtnHeader.lastElementChild.classList.toggle('is-hidden');
 
   if (mobileMenuContainerHeader.classList.contains('is-open')) {
@@ -251,7 +247,6 @@ function backDropClosing() {
   authForm.lastElementChild.textContent = 'sign up';
 }
 
-
 // scroll
 
 window.onload = function () {
@@ -280,6 +275,5 @@ window.onload = function () {
   };
   btnUp.addEventListener();
 };
-
 
 export { menusToggleOnAuth };

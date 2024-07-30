@@ -37,7 +37,8 @@ function createBooklistMarcup(data) {
     booksArr.forEach(({ _id, book_image, title, author }) => {
       //  Перевірка чи пришла обложка книги з бекенду і заміна її на заглушку в разі необхідності //
       if (!book_image) {
-        book_image = '../images/book_plug.jpg';
+        book_image =
+          'https://dummyimage.com/335x485/ffffff/502ee8.jpg&text=404';
       }
 
       const bookCardsMarcup = `<li id="${_id}" class = "book-cards">
@@ -114,7 +115,8 @@ function createMoreBooks(booksArr) {
     .map(({ _id, book_image, title, author }) => {
       //  Перевірка чи пришла обложка книги з бекенду і заміна її на заглушку в разі необхідності //
       if (!book_image) {
-        book_image = '../images/book_plug.jpg';
+        book_image =
+          'https://dummyimage.com/335x485/ffffff/502ee8.jpg&text=404';
       }
 
       const markup = `<li id="${_id}" class="books-gallery__card">
@@ -148,14 +150,12 @@ function changeColorTitle(title) {
   const labelCategories = document.querySelectorAll('.filter__item');
   const activeElement = document.querySelector('.filter__item--active');
 
-  
   activeElement.classList.remove('filter__item--active');
   const selectedElement = [...labelCategories].find(({ textContent }) => {
     return textContent === title;
   });
   console.log(selectedElement);
   selectedElement.classList.add('filter__item--active');
-  
 }
 
 //// Відкриття модального вікна при кліку по картці
@@ -166,5 +166,3 @@ function addModal() {
     card.addEventListener('click', onBtnOpen);
   });
 }
-
-

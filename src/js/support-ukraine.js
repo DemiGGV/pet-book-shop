@@ -114,7 +114,6 @@ function renderLogos() {
 
 renderLogos();
 
-
 // slider
 
 const swiperOverflowContainerEl = document.querySelector('.swiper-container');

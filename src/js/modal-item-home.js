@@ -59,7 +59,7 @@ function createModalMarcup({
   buy_links,
 }) {
   if (!book_image) {
-    book_image = '../images/book_plug.jpg';
+    book_image = 'https://dummyimage.com/335x485/ffffff/502ee8.jpg&text=404';
   }
 
   if (!description) {

@@ -23,13 +23,12 @@
     justify-content: center;
     align-items: center;
 
-    
     &-icon {
       width: 30px;
       height: 30px;
       stroke-width: 0;
     }
-    &-text{
+    &-text {
       margin-left: 8px;
 
       text-decoration: none;
@@ -40,7 +39,6 @@
       color: $dark-clr-1;
     }
   }
-
 
   &__buttons {
     display: flex;
@@ -511,7 +509,6 @@
   }
 }
 
-
 // scroll
 
 .btn-up {
@@ -551,7 +548,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .btn-up:hover {
-      border: 5px solid rgba(192, 179, 238, 0.8);
-      border-radius: 50%;
+    border: 5px solid rgba(192, 179, 238, 0.8);
+    border-radius: 50%;
   }
 }

@@ -71,7 +71,6 @@ function addGalleryMarkupAndChangeFilter() {
 
   varWithActiveValueFilter = targetEl;
 }
-// console.log(varWithActiveValueFilter);
 
 //// Рендер карток книжок по категоріям
 function addCardsByCategory() {
@@ -90,13 +89,6 @@ function addCardsByCategory() {
 
     addColorToTitle();
     addModal();
-
-    //  bookGalleryCard.forEach((book) => {
-    //    book.addEventListener('click', (e) => {
-    //      const bookId = e.currentTarget.id;
-    //      modalOpen(bookId);
-    //    })
-    //  })
   });
 }
 
@@ -106,7 +98,8 @@ function createMoreBooks(booksArr) {
     .map(({ _id, book_image, title, author }) => {
       //  Перевірка чи пришла обложка книги з бекенду і заміна її на заглушку в разі необхідності //
       if (!book_image) {
-        book_image = '../images/book_plug.jpg';
+        book_image =
+          'https://dummyimage.com/335x485/ffffff/502ee8.jpg&text=404';
       }
 
       const markup = `<li id="${_id}" class="books-gallery__card">
@@ -127,7 +120,6 @@ function createMoreBooks(booksArr) {
 
 //// Додавання акцентного кольолру до заголовку з назвою категорії списку книг
 function addColorToTitle() {
-  // const textgalleryTitle = galleryTitle.innerHTML;
   const categoryValue = varWithActiveValueFilter.innerHTML;
 
   let wordsArray = categoryValue.split(' ');

@@ -10,31 +10,26 @@ axios.defaults.baseURL = BASE_URL;
 
 async function getCategoryList() {
   const { data } = await axios.get(CATEGORY_LIST);
-    return data;
-  }
-  
-  async function getTopBooks() {
-    const { data } = await axios.get(TOP_BOOKS);
-    return data;
-  }
-  
-  async function getBooksCategory(category) {
-    const { data } = await axios.get(BOOKS_CATEGORY, {
-      params: {
-        category,
-      },
-    });
-    return data;
-  }
-  
-  async function getBooksId(id) {
-    const { data } = await axios.get(`${BOOKS_ID}/${id}`);
-    return data;
+  return data;
 }
-  
-export {
-  getCategoryList,
-  getBooksCategory,
-  getTopBooks,
-  getBooksId
-};
+
+async function getTopBooks() {
+  const { data } = await axios.get(TOP_BOOKS);
+  return data;
+}
+
+async function getBooksCategory(category) {
+  const { data } = await axios.get(BOOKS_CATEGORY, {
+    params: {
+      category,
+    },
+  });
+  return data;
+}
+
+async function getBooksId(id) {
+  const { data } = await axios.get(`${BOOKS_ID}/${id}`);
+  return data;
+}
+
+export { getCategoryList, getBooksCategory, getTopBooks, getBooksId };

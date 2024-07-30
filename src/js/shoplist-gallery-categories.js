@@ -32,7 +32,6 @@ let itemsPerPage = 5;
 
 renderShoppingList(userShoplist, currentPage);
 
-
 function renderShoppingList(data, page) {
   const startIndex = (page - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
@@ -61,12 +60,16 @@ function renderShoppingList(data, page) {
     <div class="shopping__wrap">
       <h2 class="shopping__title">${title}</h2>
       <p class="shopping__category">${list_name}</p>
-      <p class="shopping__book-description">${description ? description : 'Empty description'}</p>
+      <p class="shopping__book-description">${
+        description ? description : 'Empty description'
+      }</p>
       <div class="shopping__wrap-shops">
         <p class="shopping__book-author">${author}</p>
         <ul class="shopping__shops">
           <li class="shopping__shop">
-            <a href="${amazon.url}" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Amazon-book site">
+            <a href="${
+              amazon.url
+            }" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Amazon-book site">
               <img 
               srcset="${amazonImage1} 1x, ${amazonImage2} 2x"
               src="${amazonImage1}"
@@ -77,7 +80,9 @@ function renderShoppingList(data, page) {
             </a>
           </li>
           <li class="shopping__shop">
-            <a href="${apple.url}" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Apple-book site">
+            <a href="${
+              apple.url
+            }" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Apple-book site">
              <img 
              srcset="${appleImage1} 1x, ${appleImage2} 2x"
              src="${appleImage1}"
@@ -88,7 +93,9 @@ function renderShoppingList(data, page) {
             </a>
           </li>
           <li class="shopping__shop">
-            <a href="${bookshop.url}" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Book-shop site">
+            <a href="${
+              bookshop.url
+            }" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Book-shop site">
              <img
              srcset="${bookshopImage1} 1x, ${bookshopImage2} 2x"
              src="${bookshopImage1}"
@@ -113,10 +120,6 @@ function renderShoppingList(data, page) {
       .join('');
     refs.shoppingListEl.innerHTML = markup;
     refs.shoppingListEl.addEventListener('click', onTrashClick);
-    // observer.observe(refs.jsGuard);
-    // if (currentPage === Math.ceil(bookCount / itemsPerPage)) {
-    //   observer.unobserve(refs.jsGuard);
-    // }
   } else {
     pasteEmptyNotificationContainer();
   }

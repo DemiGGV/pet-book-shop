@@ -78,8 +78,8 @@ $fill-logo-dark-theme: #f3f3f3;
 
 .dark-theme .header__link {
   color: #f3f3f3;
-  &.is-active{
-    color:$dark-clr-1
+  &.is-active {
+    color: $dark-clr-1;
   }
 }
 
@@ -156,13 +156,17 @@ $fill-logo-dark-theme: #f3f3f3;
   background: rgba(17, 17, 17, 0.6);
 }
 
-.dark-theme .header-menu-mob-close {
-  stroke: $white-text-color;
+.dark-theme {
+  & .header-menu-mob-close {
+    stroke: $white-text-color;
+  }
+
+  & .header__mob-menu-btn-icon {
+    stroke: #f3f3f3;
+    background-color: $body-bg-color-dark;
+  }
 }
 
-// .dark-theme .(class-current-category) {
-//   color: $yellow-accent-color;
-//}
 .dark-theme {
   & .modal-text {
     color: $light-clr-1;
@@ -265,6 +269,9 @@ $fill-logo-dark-theme: #f3f3f3;
     border-color: $blue-accent-color;
   }
   & .shopping__book-description--tablet {
+    color: $light-clr-1;
+  }
+  & .shopping__storage-notification {
     color: $light-clr-1;
   }
 }

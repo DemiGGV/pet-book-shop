@@ -1,5 +1,4 @@
-
-import { onClickEscape, closeModal } from './modal_footer'
+import { onClickEscape, closeModal } from './modal_footer';
 import Glide from '@glidejs/glide';
 
 // render_footer_modal
@@ -402,10 +401,10 @@ export function openModal(event) {
 
 // запобігає мерехтіння модалки при перезавантаженні сторінки---
 
-  document.addEventListener("DOMContentLoaded", function() {
-  const modalFooter = document.getElementById("modalFooter");
-  modalFooter.style.display = "flex";
-  });
+document.addEventListener('DOMContentLoaded', function () {
+  const modalFooter = document.getElementById('modalFooter');
+  modalFooter.style.display = 'flex';
+});
 
 const options = {
   type: 'carousel',

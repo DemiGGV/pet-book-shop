@@ -1,6 +1,3 @@
-// import axios from 'axios';
-// import Notiflix from 'notiflix';
-
 import './js/header-auth.js';
 import './js/tumbler-theme.js';
 
