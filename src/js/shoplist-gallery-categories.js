@@ -167,7 +167,7 @@ function renderShoppingList(data, page) {
 function pasteEmptyNotificationContainer() {
   refs.shoppingListEl.innerHTML = '';
   refs.notificationContainerEl.classList.add('empty-js');
-  refs.shoppingHeadingEl.style.marginBottom = '140px';
+  // refs.shoppingHeadingEl.style.marginBottom = '140px';
 }
 
 function removeEmptyNotificationContainer() {

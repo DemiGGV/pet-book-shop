@@ -11,7 +11,7 @@ let user = {
   bookDataArr: [],
 };
 
-import './js/header.js';
+import './js/header-auth.js';
 import './js/tumbler-theme.js';
 
 import './js/auth-modal.js';

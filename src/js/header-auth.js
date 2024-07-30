@@ -105,8 +105,8 @@ menusToggleOnAuth();
 
 // Handle Authentication form Modal window
 const authForm = document.querySelector('.js-auth-form');
-const inputName = document.querySelector('.auth-name');
-const buttonChooseForm = document.querySelector('.button-form-choose');
+const inputName = document.querySelector('.js-auth-name');
+const buttonChooseForm = document.querySelector('.js-btn-form-choose');
 
 authForm.addEventListener('submit', onSubmitAuthForm);
 buttonChooseForm.addEventListener('click', onClickButtonChooseForm);
@@ -114,12 +114,13 @@ buttonChooseForm.addEventListener('click', onClickButtonChooseForm);
 //Choosing SignUp or SignIn method autorization
 function onClickButtonChooseForm(event) {
   if (
-    !event.target.classList.contains('auth-link') ||
+    !event.target.classList.contains('js-auth-link') ||
     event.target.classList.contains('button-selected')
   ) {
     return;
   }
 
+  // Handle Sign in
   if (event.target.classList.contains('signin')) {
     inputName.style.display = 'none';
     authForm.lastElementChild.textContent = 'sign in';
@@ -131,14 +132,16 @@ function onClickButtonChooseForm(event) {
     );
     return;
   }
+
+  // Handle Sign up
+  inputName.style.display = 'inline-block';
+  authForm.lastElementChild.textContent = 'sign up';
   event.target.parentElement.firstElementChild.classList.toggle(
     'button-selected'
   );
   event.target.parentElement.lastElementChild.classList.toggle(
     'button-selected'
   );
-  inputName.style.display = 'inline-block';
-  authForm.lastElementChild.textContent = 'sign up';
 }
 
 //Submit authentication form
@@ -188,9 +191,6 @@ function onClickHeaderSignOutUser() {
   authForm.reset();
 
   window.location.href = './index.html';
-  // setTimeout(() => {
-  //   window.location.href = './index.html';
-  // }, 500);
 }
 
 //==================================================================

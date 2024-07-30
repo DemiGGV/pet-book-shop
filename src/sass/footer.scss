@@ -3,10 +3,7 @@
   margin-left: auto;
   margin-right: auto;
   padding: 30px 0;
-  position: sticky;
-  // box-shadow: 0 2px 8px #5f41af80, inset 0 1px #ffffff4d, inset 0 10px #fff3,
-  //   inset 0 10px 20px #ffffff40, inset 0 -15px 30px #7e35d34d;
-  // width: 100%;
+  // position: sticky;
 
   background: $bck-clr-home;
   color: $dark-clr-1;
@@ -208,7 +205,7 @@
     height: 500px;
   }
 
-  @media screen and(min-width:1200px) {
+  @media screen and(min-width:1440px) {
     width: 800px;
     height: 500px;
   }
@@ -429,21 +426,3 @@ body.modal-open {
   justify-content: center;
   padding-top: 8px;
 }
-
-// @media screen and (max-width: 1440px) {
-//   .footer {
-//     width: 1440px;
-//   }
-// }
-
-// @media screen and (max-width: 768px) {
-//   .footer {
-//     width: 100%;
-//   }
-// }
-
-// @media screen and (max-width: 320px) {
-//   .footer {
-//     width: 100%;
-//   }
-// }

@@ -1,0 +1,103 @@
+@import './common';
+
+@import './header';
+@import './tumbler-theme';
+
+@import './auth-modal';
+@import './support-ukraine';
+@import './shoplist-gallery-categories.scss';
+@import './modal-item-home';
+
+@import './footer';
+
+.main-section {
+  padding: 40px 20px;
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    gap: 40px;
+  }
+}
+
+.support-container {
+  display: none;
+  @media screen and (min-width: 1440px) {
+    display: block;
+  }
+}
+
+// Animation during load site
+
+.animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  width: 100vw;
+
+  cursor: not-allowed;
+  pointer-events: none;
+
+  background-color: rgba(31, 26, 44, 0.637);
+
+  transition: background-color $animation-slow;
+}
+
+.loader {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 4px solid $light-clr-2;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  background-color: transparent;
+  border-radius: 50%;
+  position: relative;
+  animation: rotateX 1.5s infinite linear;
+}
+
+.loader::before {
+  content: '';
+  border: 4px solid $light-clr-2;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  background-color: transparent;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  animation: rotateX 0.7s infinite linear reverse;
+}
+
+@keyframes rotateX {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: not-allowed;
+  pointer-events: all;
+  overflow: hidden;
+}

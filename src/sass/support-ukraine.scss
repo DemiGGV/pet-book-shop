@@ -21,7 +21,7 @@
         margin-left: auto;
     }
 
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 1440px) {
         margin: 0;
         max-width: 490px;
         padding-bottom: 24px;}
@@ -60,9 +60,6 @@
     @media screen and (min-width: 768px) {
     height: 292px;
     }
-
-    @media screen and (min-width: 1200px) {
-  }
 }
 
 .logoContainer {
@@ -131,7 +128,7 @@
 .support-container.shopping-charity.charity {
     display: none;
 
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 1440px) {
         width: 356px;
         display: block;
         height: 490px;
