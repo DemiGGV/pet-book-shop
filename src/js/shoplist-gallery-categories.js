@@ -79,7 +79,7 @@ function renderShoppingList(data, page) {
     <div class="shopping__wrap">
       <h2 class="shopping__title">${title}</h2>
       <p class="shopping__category">${cutNameCategory(list_name)}</p>
-      <p class="shopping__book-description--tablet">${description}</p>
+      <p class="shopping__book-description--tablet">${description ? description : 'Empty description'}</p>
       <ul class="shopping__shops">
         <li class="shopping__shop">
           <a href="${
@@ -148,8 +148,7 @@ function renderShoppingList(data, page) {
       <use href="${refs.logoTrashPath}#icon-trash"></use>
     </svg>
   </button>
-  <p class="shopping__book-description">${description}</p>
-</li>`;
+  </li>`;
         }
       )
       .join('');
