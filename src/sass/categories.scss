@@ -1,26 +1,21 @@
 .filter {
   width: 100%;
-
-  @media screen and (min-width: 768px) {
-    width: 337px;
-    height: 472px;
-  }
-  @media screen and (min-width: 1200px) {
-    width: 356px;
-  }
-  @media screen and (min-width: 1440px) {
-    margin-bottom: 86px;
-  }
 }
 
 .filter__list {
   max-height: 228px;
   width: 100%;
+
   overflow-y: auto;
   overflow-x: hidden;
 
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
   @media screen and (min-width: 768px) {
-    max-height: 472px;
+    max-height: 470px;
+    gap: 32px;
   }
 
   &::-webkit-scrollbar {
@@ -36,9 +31,6 @@
 }
 
 .filter__item {
-  padding-bottom: 24px;
-  padding-right: 20px;
-
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -52,7 +44,6 @@
   @media screen and (min-width: 768px) {
     font-size: 17px;
     line-height: 1.33;
-    padding-bottom: 32px;
   }
 }
 

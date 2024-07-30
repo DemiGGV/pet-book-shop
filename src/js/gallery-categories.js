@@ -22,7 +22,7 @@ getTopBooks().then(data => {
 });
 
 function createTitleMarcup() {
-  return 'Best Sellers <span class="gallery-title-span">Books</span>';
+  return 'Best&nbsp;Sellers&nbsp;<span class="gallery-title-span">Books</span>';
 }
 
 function createBooklistMarcup(data) {

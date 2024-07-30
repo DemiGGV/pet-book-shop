@@ -47,6 +47,7 @@ const togglemobileSignUp = document.querySelector('.js-mobile-signup'); // heade
 const signOutHeaderBtn = document.querySelector('.js-header-logout'); // header logOut btn
 const signOutMobile = document.querySelector('.js-mobile-logout'); // mobile signOut btn
 const headerInfoBtn = document.querySelector('.js-header-info'); // mobile signOut btn
+const supportContainerSection = document.querySelector('.js-support-container'); // support container visible
 
 const mobileName = document.querySelector('.js-mob-name'); // mobile user name
 const headerName = document.querySelector('.js-btn-user-name'); // header user name
@@ -55,23 +56,28 @@ const mobNavItems = document.querySelector('.js-mob-nav-list');
 signOutHeaderBtn.addEventListener('click', onClickHeaderSignOutUser);
 signOutMobile.addEventListener('click', onClickSignOutUser);
 headerInfoBtn.addEventListener('click', onClickInfoButton);
+
 // переключение видимости по условиям
+
 function onClickInfoButton() {
   // headerInfoBtn.classList.toggle('is-visible');
   headerInfoBtn.nextElementSibling.classList.toggle('is-visible');
 }
+
 function menusToggleOnAuth() {
   if (document.location.pathname.includes('shop-list')) {
     navItems.firstElementChild.firstElementChild.classList.remove('is-active');
     navItems.lastElementChild.firstElementChild.classList.add('is-active');
     mobNavItems.firstElementChild.classList.remove('nav-active');
     mobNavItems.lastElementChild.classList.add('nav-active');
+    supportContainerSection.classList.add('is-active');
   }
   if (document.location.pathname.includes('index')) {
     navItems.firstElementChild.firstElementChild.classList.add('is-active');
     navItems.lastElementChild.firstElementChild.classList.remove('is-active');
     mobNavItems.firstElementChild.classList.add('nav-active');
     mobNavItems.lastElementChild.classList.remove('nav-active');
+    supportContainerSection.classList.remove('is-active');
   }
   if (isUserSet()) {
     toggleHeaderMenuAuth.classList.toggle('is-visible');

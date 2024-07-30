@@ -9,13 +9,11 @@
   line-height: 1.19;
   letter-spacing: -0.05em;
   color: $dark-clr-1;
-  margin-bottom: 40px;
 
   &--color {
     color: $accent-clr;
   }
   @media screen and (min-width: 768px) {
-    margin-bottom: 140px;
     font-size: 48px;
     line-height: 1.08;
   }
@@ -24,9 +22,14 @@
 // Card
 .shopping {
   &__cards {
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    
+    &.empty-js {
+      display: none;
+    }
   }
 
   &__card {
@@ -302,7 +305,7 @@
 
 .shopping__storage.empty-js {
   display: block;
-  margin: 0 auto 150px;
+  margin: 140px auto;
   width: 265px;
 }
 

@@ -1,3 +1,4 @@
+
 .gallery-title {
   margin-bottom: 40px;
 
@@ -19,7 +20,6 @@
   display: block;
   padding: 0;
   width: 335px;
-  margin-bottom: 40px;
 
   @media screen and (min-width: 768px) {
     width: 704px;
@@ -107,6 +107,8 @@
   width: 335px;
   height: 485px;
   border-radius: 8px;
+
+  object-fit: contain;
 
   @media screen and (min-width: 768px) {
     width: 218px;
@@ -233,20 +235,18 @@
 .books-gallery {
   display: flex;
   width: 335px;
-  gap: 40px;
   flex-direction: column;
   align-items: center;
+  gap: 40px;
 
   @media screen and (min-width: 768px) {
     width: 704px;
-    gap: 25px;
     flex-direction: row;
     flex-wrap: wrap;
   }
 
   @media screen and (min-width: 1440px) {
     width: 996px;
-    gap: 24px;
   }
 }
 

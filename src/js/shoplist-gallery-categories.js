@@ -29,24 +29,9 @@ let userShoplist = currUser.bookDataArr;
 
 let currentPage = 1;
 let itemsPerPage = 5;
-// let bookCount = bookList.length;
 
 renderShoppingList(userShoplist, currentPage);
 
-// let optionsObserver = {
-//   root: null,
-//   rootMargin: '600px',
-//   threshold: 1.0,
-// };
-// let observer = new IntersectionObserver(onLoad, optionsObserver);
-// function onLoad(entries) {
-//   entries.forEach(entry => {
-//     if (entry.isIntersecting) {
-//       currentPage++;
-//       renderShoppingList(userShoplist, currentPage);
-//     }
-//   });
-// }
 
 function renderShoppingList(data, page) {
   const startIndex = (page - 1) * itemsPerPage;
@@ -140,7 +125,7 @@ function renderShoppingList(data, page) {
 function pasteEmptyNotificationContainer() {
   refs.shoppingListEl.innerHTML = '';
   refs.notificationContainerEl.classList.add('empty-js');
-  // refs.shoppingHeadingEl.style.marginBottom = '140px';
+  refs.shoppingListEl.classList.add('empty-js');
 }
 
 function removeEmptyNotificationContainer() {
@@ -148,16 +133,6 @@ function removeEmptyNotificationContainer() {
   refs.shoppingHeadingEl.style.marginBottom = '';
   removeEventListener('click', onTrashClick);
 }
-
-// function cutNameCategory(name) {
-//   if (window.innerWidth <= 768) {
-//     if (name.length > 20) {
-//       return name.substring(0, 20) + '...';
-//     }
-//     return name;
-//   }
-//   return name;
-// }
 
 function onTrashClick(e) {
   const isButton = e.target
@@ -167,7 +142,6 @@ function onTrashClick(e) {
     return;
   }
 
-  // const bookEl = target.closest('.shopping__btn').closest('.shopping__card');
   const idToDelete = e.target.closest('.shopping__btn').dataset.id.trim();
   const removedElIndexFromStorage = bookList.findIndex(
     item => item === idToDelete
@@ -175,12 +149,9 @@ function onTrashClick(e) {
 
   bookList.splice(removedElIndexFromStorage, 1);
   userShoplist.splice(removedElIndexFromStorage, 1);
-  // let currUser = localStorage.getItem('user') ? getUserFromLS() : [];
   currUser.booksArr = bookList;
   currUser.bookDataArr = userShoplist;
   setUserInLS(currUser);
   updateUserDatabase(currUser);
-
-  // bookCount = bookList.length;
   renderShoppingList(userShoplist, currentPage);
 }

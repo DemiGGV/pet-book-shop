@@ -12,46 +12,37 @@
 @import './footer';
 @import './shoplist-gallery-categories.scss';
 
-.align-home-sect {
+.main-section {
+  padding: 40px 20px;
   display: flex;
-  margin-top: 40px;
-  margin-bottom: 72px;
-  margin-left: auto;
-  margin-right: auto;
+  flex-direction: column;
+  gap: 40px;
 
-  @media screen and (min-width: 1440px) {
-    width: 1440px;
+  @media screen and (min-width:768px) {
+    padding: 40px 32px;
   }
 
-  @media screen and (max-width: 1439px) {
-    flex-wrap: wrap;
-
-    .align-left {
-      display: flex;
-      justify-content: center;
-
-      margin-bottom: 100px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-
-  @media screen and (max-width: 688px) {
-    .align-left {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .div-support {
-      margin-top: 40px;
-    }
+  @media screen and (min-width:1440px) {
+    padding: 40px 24px;
+    flex-direction: row;  
   }
 }
 
-@media screen and (max-width: 768px) {
-  .shop-list-none {
-    display: none;
+.aside-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  
+  @media screen and (min-width:768px) {
+    flex-direction: row;    
+    gap: 32px;
+  }
+  
+  @media screen and (min-width:1440px) {
+    flex-direction: column;
+    gap: 86px;
+    max-width: 355px;
+    width: 100%;
   }
 }
 

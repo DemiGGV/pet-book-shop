@@ -92,7 +92,7 @@
   line-height: 18px;
   letter-spacing: -0.04em;
   color: $dark-clr-1;
-  height: 75px;
+  // height: 75px;
   overflow-y: scroll;
 }
 .modal__social-list {
@@ -136,6 +136,7 @@
   line-height: 18px;
   letter-spacing: -0.01em;
   text-transform: uppercase;
+  text-wrap: nowrap;
   color: $dark-clr-1;
   border: 2px solid $accent-clr;
   border-radius: 40px;
@@ -330,6 +331,7 @@
   line-height: 18px;
   letter-spacing: -0.01em;
   text-transform: uppercase;
+  text-wrap: nowrap;
   color: $dark-clr-1;
   border: 2px solid $accent-clr;
   border-radius: 40px;
