@@ -271,7 +271,11 @@ $fill-logo-dark-theme: #f3f3f3;
   & .shopping__book-description--tablet {
     color: $light-clr-1;
   }
-  & .shopping__storage-notification {
+  & .shopping__shop-img {
+    filter: drop-shadow(0 0 5px $light-clr-1);
+  }
+  & .shopping__storage-notification,
+  & .shopping__book-description {
     color: $light-clr-1;
   }
 }

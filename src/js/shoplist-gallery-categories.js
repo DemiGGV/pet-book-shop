@@ -25,17 +25,21 @@ const refs = {
 
 let currUser = localStorage.getItem('user') ? getUserFromLS() : [];
 let bookList = currUser.booksArr;
-let userShoplist = currUser.bookDataArr;
+let userShoplist = [...currUser.bookDataArr];
 
+let firstPage = 1;
 let currentPage = 1;
 let itemsPerPage = 5;
+
 
 renderShoppingList(userShoplist, currentPage);
 
 function renderShoppingList(data, page) {
-  const startIndex = (page - 1) * itemsPerPage;
+  const startIndex = ( page - 1 ) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  let currentData = data.slice(startIndex, endIndex);
+  let currentData = data.slice( startIndex, endIndex );
+  let lastPage = Math.ceil( userShoplist.length / itemsPerPage );
+  const pages = [...Array(lastPage)].map((_, i) => i)
 
   if (currentData.length) {
     removeEmptyNotificationContainer();
@@ -117,7 +121,7 @@ function renderShoppingList(data, page) {
   </li>`;
         }
       )
-      .join('');
+      .join(''); //.concat(', ', str1)
     refs.shoppingListEl.innerHTML = markup;
     refs.shoppingListEl.addEventListener('click', onTrashClick);
   } else {
