@@ -57,71 +57,71 @@ function renderShoppingList(data, page) {
           buy_links: [amazon, apple, , , bookshop],
         }) => {
           return `<li class="shopping__card" data-id="${_id}">
-  <div class="shopping__block">
-    <div class="shopping__thumb">
-      <img src="${book_image}" alt="${list_name}" class="shopping__book-img" width="${book_image_width}" height="${book_image_height}"/>
-    </div>
-    <div class="shopping__wrap">
-      <h2 class="shopping__title">${title}</h2>
-      <p class="shopping__category">${list_name}</p>
-      <p class="shopping__book-description">${
-        description ? description : 'Empty description'
-      }</p>
-      <div class="shopping__wrap-shops">
-        <p class="shopping__book-author">${author}</p>
-        <ul class="shopping__shops">
-          <li class="shopping__shop">
-            <a href="${
-              amazon.url
-            }" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Amazon-book site">
-              <img 
-              srcset="${amazonImage1} 1x, ${amazonImage2} 2x"
-              src="${amazonImage1}"
-              alt="${amazon.name}"
-              class="shopping__shop-img"
-              width="48"
-              height="15"/>
-            </a>
-          </li>
-          <li class="shopping__shop">
-            <a href="${
-              apple.url
-            }" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Apple-book site">
-             <img 
-             srcset="${appleImage1} 1x, ${appleImage2} 2x"
-             src="${appleImage1}"
-             alt="${apple.name}"
-             class="shopping__shop-img"
-             width="28"
-             height="27"/>
-            </a>
-          </li>
-          <li class="shopping__shop">
-            <a href="${
-              bookshop.url
-            }" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Book-shop site">
-             <img
-             srcset="${bookshopImage1} 1x, ${bookshopImage2} 2x"
-             src="${bookshopImage1}"
-             alt="${bookshop.name}"
-             class="shopping__shop-img"
-             width="32"
-             height="30"/>
-            </a>
-          </li>
-        </ul>
+    <div class="shopping__block">
+      <div class="shopping__thumb">
+        <img src="${book_image}" alt="${list_name}" class="shopping__book-img" width="${book_image_width}" height="${book_image_height}"/>
+      </div>
+      <div class="shopping__wrap">
+          <h2 class="shopping__title">${title}</h2>
+          <p class="shopping__category">${list_name}</p>
+          <p class="shopping__book-description">${
+          description ? description : 'Empty description'
+          }</p>
+        <div class="shopping__wrap-shops">
+          <p class="shopping__book-author">${author}</p>
+          <ul class="shopping__shops">
+            <li class="shopping__shop">
+              <a href="${
+                amazon.url
+                }" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Amazon-book site">
+                <img 
+                srcset="${amazonImage1} 1x, ${amazonImage2} 2x"
+                src="${amazonImage1}"
+                alt="${amazon.name}"
+                class="shopping__shop-img"
+                width="48"
+                height="15"/>
+              </a>
+            </li>
+            <li class="shopping__shop">
+              <a href="${
+                 apple.url
+               }" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Apple-book site">
+               <img 
+               srcset="${appleImage1} 1x, ${appleImage2} 2x"
+               src="${appleImage1}"
+               alt="${apple.name}"
+               class="shopping__shop-img"
+               width="28"
+               height="27"/>
+              </a>
+            </li>
+            <li class="shopping__shop">
+              <a href="${
+                 bookshop.url
+               }" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Book-shop site">
+               <img
+                srcset="${bookshopImage1} 1x, ${bookshopImage2} 2x"
+                src="${bookshopImage1}"
+                alt="${bookshop.name}"
+                class="shopping__shop-img"
+                width="32"
+                height="30"/>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <button type="button" class="shopping__btn" aria-label="Delete the book from shopping list" data-id="${_id}">
-    <svg class="shopping__btn-icon" width="18" height="18">
-      <use href="${refs.logoTrashPath}#icon-trash"></use>
-    </svg>
-  </button>
+    <button type="button" class="shopping__btn" aria-label="Delete the book from shopping list" data-id="${_id}">
+      <svg class="shopping__btn-icon" width="18" height="18">
+       <use href="${refs.logoTrashPath}#icon-trash"></use>
+      </svg>
+    </button>
   </li>`;
         }
       )
-      .join(''); //.concat(', ', str1)
+      .join('').concat(``);
     refs.shoppingListEl.innerHTML = markup;
     refs.shoppingListEl.addEventListener('click', onTrashClick);
   } else {
