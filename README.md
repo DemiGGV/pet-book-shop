@@ -1,5 +1,8 @@
 **BOOK-SHOP // A team project on JavaScript.**
 
+Link:
+https://demiggv.github.io/pet-book-shop/
+
 - In this project, my responsibilities included ensuring the **backend part** of the project was functioning correctly. However, after completing my task, I joined the frontend team, providing **mentoring assistance** to the team members, as well as taking over the modal authorization windows. Additionally, I worked alongside the team leader to carry out the final integration of the project.
 
 - The main feature of this project, like any other, is **teamwork and collaboration**. Training **soft skills** was emphasized much more than **technical skills**.
