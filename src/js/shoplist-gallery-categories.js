@@ -27,10 +27,45 @@ let currUser = localStorage.getItem('user') ? getUserFromLS() : [];
 let bookList = currUser.booksArr;
 let userShoplist = [...currUser.bookDataArr];
 
-let firstPage = 1;
 let currentPage = 1;
 let itemsPerPage = 5;
+let firstPage = 1;
+let lastPage = math.Ceil( userShoplist.length / itemsPerPage );
 
+
+function pasteEmptyNotificationContainer() {
+  refs.shoppingListEl.innerHTML = '';
+  refs.notificationContainerEl.classList.add('empty-js');
+  refs.shoppingListEl.classList.add('empty-js');
+}
+
+function removeEmptyNotificationContainer() {
+  refs.notificationContainerEl.classList.remove('empty-js');
+  refs.shoppingHeadingEl.style.marginBottom = '';
+  removeEventListener('click', onTrashClick);
+}
+
+function onTrashClick(e) {
+  const isButton = e.target
+    .closest('.shopping__btn')
+    .classList.contains('shopping__btn');
+  if (!isButton) {
+    return;
+  }
+
+  const idToDelete = e.target.closest('.shopping__btn').dataset.id.trim();
+  const removedElIndexFromStorage = bookList.findIndex(
+    item => item === idToDelete
+  );
+
+  bookList.splice(removedElIndexFromStorage, 1);
+  userShoplist.splice(removedElIndexFromStorage, 1);
+  currUser.booksArr = bookList;
+  currUser.bookDataArr = userShoplist;
+  setUserInLS(currUser);
+  updateUserDatabase(currUser);
+  renderShoppingList(userShoplist, currentPage);
+}
 
 renderShoppingList(userShoplist, currentPage);
 
@@ -127,38 +162,4 @@ function renderShoppingList(data, page) {
   } else {
     pasteEmptyNotificationContainer();
   }
-}
-
-function pasteEmptyNotificationContainer() {
-  refs.shoppingListEl.innerHTML = '';
-  refs.notificationContainerEl.classList.add('empty-js');
-  refs.shoppingListEl.classList.add('empty-js');
-}
-
-function removeEmptyNotificationContainer() {
-  refs.notificationContainerEl.classList.remove('empty-js');
-  refs.shoppingHeadingEl.style.marginBottom = '';
-  removeEventListener('click', onTrashClick);
-}
-
-function onTrashClick(e) {
-  const isButton = e.target
-    .closest('.shopping__btn')
-    .classList.contains('shopping__btn');
-  if (!isButton) {
-    return;
-  }
-
-  const idToDelete = e.target.closest('.shopping__btn').dataset.id.trim();
-  const removedElIndexFromStorage = bookList.findIndex(
-    item => item === idToDelete
-  );
-
-  bookList.splice(removedElIndexFromStorage, 1);
-  userShoplist.splice(removedElIndexFromStorage, 1);
-  currUser.booksArr = bookList;
-  currUser.bookDataArr = userShoplist;
-  setUserInLS(currUser);
-  updateUserDatabase(currUser);
-  renderShoppingList(userShoplist, currentPage);
 }
